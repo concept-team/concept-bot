@@ -61,8 +61,8 @@ var initSdk = function(name) {
 			initMessageOptions: {
 				sendAt: 'expand'
 			},
-			displayActionsAsPills: false,
-			enableAttachment: true,
+			displayActionsAsPills: true,
+			enableAttachment: false,
 //			shareMenuItems: ['visual'],
 			shareLocation: false,
 			enableAutocomplete: true,
@@ -118,7 +118,7 @@ var initSdk = function(name) {
 					chatTitle: 'Assistente Digital', 
 					connected: 'Disponível',
 					disconnected: 'Indisponível',
-					inputPlaceholder: 'Digite sua mensagem aqui', 
+					inputPlaceholder: 'Escrever mensagem', 
 					send: 'Enviar (Enter)',      
 					clear: 'Limpar Chat',
 					close: 'Minimizar Chat',

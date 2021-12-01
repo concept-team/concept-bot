@@ -138,9 +138,11 @@ body {
   flex: auto;
 }
 
+.oda-chat-title,
+.oda-chat-connection-status,
+.oda-chat-logo,
 .oda-chat-message-date {
-  font-size: 10px;
-  margin: 4px 4px 0;
+  display: none;
 }
 
 .oda-chat-embed-sticky-top,
@@ -552,7 +554,7 @@ body {
 }
 
 .oda-chat-footer-button-svg-icon {
-  fill: #787570;
+  fill: #fff;
   height: 24px;
   width: 24px;
 }
@@ -598,7 +600,7 @@ body {
   font-size: 16px;
   flex: 1;
   height: 32px;
-  line-height: 18px;
+  line-height: 32px;
   margin: 0 6px;
   max-height: 61px;
   min-height: 32px;
@@ -606,7 +608,7 @@ body {
   overflow: auto;
   padding: 6px 14px;
   resize: none;
-  text-align: start;
+  text-align: justify;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -623,7 +625,12 @@ body {
 }
 
 .oda-chat-user-input.oda-chat-user-input-inline-send {
-  padding: 6px 40px 6px 14px;
+  padding: 9px 70px 6px 14px;
+  height: 3em;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .oda-chat-autocomplete-items {
@@ -667,6 +674,12 @@ body {
 }
 
 .oda-chat-button-send-inline {
+  left: unset;
+  position: absolute;
+  right: 22px;
+}
+
+.oda-chat-button-switch-voice {
   left: unset;
   position: absolute;
   right: 52px;
@@ -1638,6 +1651,7 @@ body {
   max-width: 350px;
   padding: 20px;
   position: relative;
+  border-radius: 10px;
 }
 
 .oda-chat-screen-reader-only {
@@ -1672,7 +1686,7 @@ body {
 
 .oda-chat-left .oda-chat-message-bubble,
 [dir="rtl"] .oda-chat-right .oda-chat-message-bubble {
-  border-radius: 24px 24px 24px 0;
+  border: 1px solid #7a736e;
   margin-left: unset;
   margin-right: 20px;
 }
@@ -1683,17 +1697,8 @@ body {
 }
 
 .oda-chat-left .oda-chat-message-footer {
-  border-radius: 0 0 24px 24px;
+  border: 1px solid #7a736e;
   margin-top: 10px;
-}
-
-.oda-chat-left .oda-chat-has-header {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.oda-chat-left .oda-chat-has-footer {
-  border-bottom-right-radius: 0;
 }
 
 [dir="rtl"] .oda-chat-left .oda-chat-has-footer {
@@ -2069,11 +2074,13 @@ hr {
 }
 
 .oda-chat-message-global-actions .oda-chat-action-postback {
-  background-color: #fff;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #0e7295;
-  color: #0e7295;
+  background-color: #000;
+  border: 1px solid #7A736E;
+  color: #fff;
+  min-width: 100%;
+  text-align: left;
+  justify-content: left !important;
+  float: left;
   font-family: "Oracle Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -2162,12 +2169,11 @@ hr {
 
 .oda-chat-footer {
   background-color: #2d2a26;
-  border-top: 1px solid #000;
 }
 
 .oda-chat-user-input {
   caret-color: #000;
-  background-color: #7a736e;
+  background-color: #7A736E;
   color: #bebab8;
   font-family: "Oracle Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
