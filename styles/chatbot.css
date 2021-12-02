@@ -287,7 +287,7 @@ body {
   margin-right: 40px;
 }
 
-@media screen and (min-width: 426px) {
+/* @media screen and (min-width: 426px) {
   .oda-chat-widget {
     bottom: 0;
     height: 85vh;
@@ -331,7 +331,7 @@ body {
     max-width: 512px;
     width: 30vw;
   }
-}
+} */
 
 @keyframes scale-in-center {
   0% {
@@ -2215,10 +2215,10 @@ hr {
   fill: #fff;
 }
 
-@media screen and (min-width: 426px) {
+/* @media screen and (min-width: 426px) {
   .oda-chat-widget {
     border-radius: 4px;
     height: 620px;
     width: 375px;
   }
-}
+} */
