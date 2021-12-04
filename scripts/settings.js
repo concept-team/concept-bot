@@ -92,8 +92,8 @@ var initSdk = function (name) {
     locale == "pt-BR"
       ? skillVoicePT
       : locale == "es"
-      ? skillVoiceES
-      : skillVoiceEN;
+        ? skillVoiceES
+        : skillVoiceEN;
 
   setTimeout(function () {
     /**
@@ -143,17 +143,17 @@ var initSdk = function (name) {
       openChatOnLoad: true,
       skillVoices: skillVoices,
       /*			multiLangChat: {
-				supportedLangs: [{
-					lang: 'en'
-				}, {
-					lang: 'es',
-					label: 'Español'
-				}, {
-					lang: 'pt',
-					label: 'Português'
-				}],
-				primary: 'pt'
-			},	*/
+        supportedLangs: [{
+          lang: 'en'
+        }, {
+          lang: 'es',
+          label: 'Español'
+        }, {
+          lang: 'pt',
+          label: 'Português'
+        }],
+        primary: 'pt'
+      },	*/
       conversationBeginPosition: "bottom",
       //botButtonIcon: 'botOracle/images/iconConceptStore.png',
       //logoIcon: 'botOracle/images/iconConceptStore.png',
@@ -228,7 +228,37 @@ var initSdk = function (name) {
       },
     };
     Bots = new WebSDK(chatWidgetSettings);
-	// document.getElementsByTagName("style")[0].remove();
+
+
+    // ----------------------------- HERE, THERE! ------------------------------------------
+    // document.getElementsByTagName("style")[0].remove();
+
+
+    // remove header
+    document.getElementsByClassName("oda-chat-header")[0].remove();
+
+
+    // Input element
+    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.borderRadius = '6px'
+    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.minHeight = '58px'
+    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.paddingTop = '20px'
+    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].innerHTML = 'Escrever mensagem'
+
+    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-switch-voice")[0].style.position = 'absolute'
+    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-switch-voice")[0].style.right = '60px'
+
+    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-send oda-chat-button-send-inline")[0].style.position = 'absolute'
+    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-send oda-chat-button-send-inline")[0].style.right = '20px'
+
+
+    document.getElementsByClassName("oda-chat-footer oda-chat-mode-keyboard")[0].style.borderWidth = '0'
+
+
+
+
+
+    // ----------------------------- HERE WE GO! ------------------------------------------
+
 
     Bots.setSize("100vw", "100vh");
 
