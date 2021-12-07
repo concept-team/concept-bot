@@ -229,9 +229,7 @@ var initSdk = function (name) {
     };
     Bots = new WebSDK(chatWidgetSettings);
 
-
-    // ----------------------------- HERE, THERE! ------------------------------------------
-    // document.getElementsByTagName("style")[0].remove();
+    Bots.setSpeechLocale('pt-br')
 
 
     // remove header
@@ -239,26 +237,22 @@ var initSdk = function (name) {
 
 
     // Input element
-    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.borderRadius = '6px'
-    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.minHeight = '58px'
-    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].style.paddingTop = '20px'
-    document.getElementsByClassName("oda-chat-user-input oda-chat-user-input-inline-send")[0].innerHTML = 'Escrever mensagem'
+    const input = document.querySelector('.oda-chat-user-input-inline-send');
+    input.style.borderRadius = '6px';
+    input.style.minHeight = '58px';
+    input.style.paddingTop = '20px';
 
-    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-switch-voice")[0].style.position = 'absolute'
-    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-switch-voice")[0].style.right = '60px'
+    // Input icons
+    const speechIcon = document.getElementsByClassName("oda-chat-button-switch-voice")[0];
+    speechIcon.style.position = 'absolute';
+    speechIcon.style.right = '60px';
 
-    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-send oda-chat-button-send-inline")[0].style.position = 'absolute'
-    document.getElementsByClassName("oda-chat-footer-button oda-chat-button-send oda-chat-button-send-inline")[0].style.right = '20px'
+    const sendIcon = document.getElementsByClassName("oda-chat-button-send-inline")[0];
+    sendIcon.style.position = 'absolute';
+    sendIcon.style.right = '20px';
 
-
-    document.getElementsByClassName("oda-chat-footer oda-chat-mode-keyboard")[0].style.borderWidth = '0'
-
-
-
-
-
-    // ----------------------------- HERE WE GO! ------------------------------------------
-
+    // Line uppon input
+    document.getElementsByClassName("oda-chat-mode-keyboard")[0].style.borderWidth = '0';
 
     Bots.setSize("100vw", "100vh");
 
